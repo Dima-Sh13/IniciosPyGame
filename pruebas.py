@@ -4,11 +4,8 @@ pg.init()#Inicializamos los modulos pygame
 x_display= 1400
 y_display = 900
 rectangulo1 = Rectangulo(700,450)
-rectangulo1.direccion(0.5, -0.5)
-rectangulo2 = Rectangulo(200,100,(100,100,100))
-rectangulo2.direccion(0.1,0.1)
-rectangulo3 = Rectangulo(200,100,(200,222,200))
-rectangulo3.direccion(0.2,0.2)
+rectangulo1.direccion(0.5, 0.5)
+
 
 # crear pantalla o surface 
 pantalla = pg.display.set_mode( (x_display,y_display))# definicion de tamaño de pantalla
@@ -25,12 +22,9 @@ while game_over:
     pantalla.fill((50, 189, 172))
     #agregamos objeto a la pantalla
     rectangulo1.movimiento(x_display,y_display)
-    rectangulo2.movimiento(x_display,y_display)
-    rectangulo3.movimiento(x_display,y_display)
     #draw.rect(surface, color en (rgb), posiciones(posicion en x, posicion en y, tamaño x, tamaño en y))
     pg.draw.rect(pantalla,rectangulo1.color,(rectangulo1.x,rectangulo1.y,rectangulo1.width,rectangulo1.height))
-    pg.draw.rect(pantalla,rectangulo2.color,(rectangulo2.x,rectangulo2.y,rectangulo2.width,rectangulo2.height))
-    pg.draw.rect(pantalla,rectangulo3.color,(rectangulo3.x,rectangulo3.y,rectangulo3.width,rectangulo3.height))
+    #pg.draw.rect(pantalla,(227, 58, 31),(700,x,40,40))
     pg.display.flip()#funcion para cargar toda la configuracion que va dentro de la pantalla
 
 pg.quit()            
